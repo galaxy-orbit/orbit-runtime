@@ -1,0 +1,54 @@
+{
+  "name": "@galaxy-stack/orbit-runtime",
+  "version": "0.1.6",
+  "description": "Bun-specific runtime optimizations for Orbit",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun --packages external",
+    "dev": "bun --watch src/index.ts",
+    "changeset": "changeset"
+  },
+  "dependencies": {
+    "@galaxy-stack/orbit-core": "^0.1.4"
+  },
+  "peerDependencies": {
+    "bun": ">=1.0.0"
+  },
+  "keywords": [
+    "bun",
+    "runtime",
+    "streaming",
+    "worker",
+    "hashing",
+    "orbit"
+  ],
+  "author": "Orbit",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galaxy-orbit/orbit-runtime.git"
+  },
+  "bugs": {
+    "url": "https://github.com/galaxy-orbit/orbit/issues"
+  },
+  "homepage": "https://galaxy-orbit-framework.vercel.app",
+  "devDependencies": {
+    "reflect-metadata": "^0.2.2",
+    "@changesets/cli": "^2.27.0"
+  }
+}
