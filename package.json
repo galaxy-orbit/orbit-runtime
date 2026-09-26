@@ -1,23 +1,24 @@
 {
   "name": "@galaxy-stack/orbit-runtime",
-  "version": "0.1.6",
+  "version": "0.1.10",
   "description": "Bun-specific runtime optimizations for Orbit",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist --target bun --packages external",
     "dev": "bun --watch src/index.ts",
+    "build:types": "bash scripts/build-types.sh",
     "changeset": "changeset"
   },
   "dependencies": {
-    "@galaxy-stack/orbit-core": "^0.1.4"
+    "@galaxy-stack/orbit-core": "^0.2.0"
   },
   "peerDependencies": {
     "bun": ">=1.0.0"
@@ -44,11 +45,12 @@
     "url": "git+https://github.com/galaxy-orbit/orbit-runtime.git"
   },
   "bugs": {
-    "url": "https://github.com/galaxy-orbit/orbit/issues"
+    "url": "https://github.com/galaxy-orbit/orbit-cli/issues"
   },
   "homepage": "https://galaxy-orbit-framework.vercel.app",
   "devDependencies": {
     "reflect-metadata": "^0.2.2",
-    "@changesets/cli": "^2.27.0"
+    "@changesets/cli": "^2.27.0",
+    "@types/bun": "latest"
   }
 }
